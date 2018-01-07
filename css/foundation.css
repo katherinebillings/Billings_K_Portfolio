@@ -2267,7 +2267,8 @@ a.button:hover, a.button:focus {
     left: 0; }
   .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a {
     position: relative;
-    padding-right: 1.5rem; }
+    padding-right: 1.5rem;
+    }
   .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
     display: block;
     width: 0;
