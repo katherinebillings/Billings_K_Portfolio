@@ -1963,7 +1963,7 @@ a.button:hover, a.button:focus {
   .menu.align-right .nested {
     margin-right: 1rem;
     margin-left: 0; }
-  .menu.align-center li {
+  .menu.align-center < li {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;

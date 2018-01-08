@@ -14,15 +14,15 @@
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="small-6 small-offset-3 medium-offset-0 medium-3 large-2 cell" id="logo"></div>
-                    <div id="hamMenu" class="small-3 hide-for-medium cell">
-                        <button class="menu-icon float-right" type="button">
+                    <div id="hamMenu" class="small-3 cell" data-responsive-toggle="mainNav" data-hide-for="medium">
+                        <button class="menu-icon float-right" type="button" data-toggle="mainNav">
                         </button>
                     </div>
                     <nav id="mainNav" class="small-6 small-offset-3 medium-offset-2 medium-7 large-offset-3 cell">
                         <h2 class="hide">Main Navigation</h2>
                         <ul class="vertical medium-horizontal menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Gallery</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
@@ -33,11 +33,8 @@
         <div class="grid-container" id="content">
             <div class="grid-x grid-padding-x" id="topContent">
                 <h2 class="small-8 small-offset-2 medium-4 medium-offset-4 large-8 large-offset-2 cell">Gallery</h2>
-                <div class="hide-for-medium small-2 cell">
-                    <button id="filterIcon" class="float-right"></button>
-                </div>
-                <div class="hide-for-small-only medium-4 medium-offset-4 large-2 large-offset-5 cell" id="filtertext">
-                    <h3>Filters</h3>
+                <div class="hide-for-medium small-2 cell" data-responsive-toggle="filterMenu">
+                    <button id="filterIcon" class="float-right" data-toggle="filterMenu"></button>
                 </div>
             </div>
             <div class="grid-x grid-padding-x">
@@ -71,11 +68,38 @@
             </div>
             <div id="gallery" class="grid-x grid-padding-x">
                 <div class="gFile small-6 medium-12 large-10 large-offset-1">
-                    <img src="" alt="File Image">
-                    <div id="gInfo">
+                    <img src="" alt="File Image" class="lbImg">
+                    <div class="gInfo">
                         <h3 class="title show-for-medium">Title</h3>
                         <h4 class="position show-for-medium">Position</h4>
-                        <div class="programContainer show-for-large"></div>
+                        <div class="programContainer show-for-large">
+                            <div class="program">
+                                <h6>Program</h6>
+                            </div>
+                            <div class="program">
+                                <h6>Program</h6>
+                            </div>
+                        </div>
+                        <p class="summary show-for-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel leo tortor. Curabitur lacinia leo sed sem ornare luctus. Vestibulum sagittis quam nec est rhoncus, et fermentum nibh tempor. Cras venenatis diam orci, et ullamcorper libero euismod at. Fusce id tristique diam. Nulla nec urna arcu. Aliquam molestie fringilla urna, eget elementum felis sodales eu. Fusce vehicula, lacus quis tincidunt eleifend, urna neque ullamcorper metus, quis porta nisi tellus a metus. Morbi nulla mi, volutpat ac vehicul</p>
+                    </div>
+                    <ul>
+                        <li class="lbLink show-for-medium">View More</li>
+                        <li class="outsideLink show-for-medium">View on Other Site</li>
+                    </ul>
+                </div>
+                <div class="gFile small-6 medium-12 large-10 large-offset-1">
+                    <img src="" alt="File Image" class="lbImg">
+                    <div class="gInfo">
+                        <h3 class="title show-for-medium">Title</h3>
+                        <h4 class="position show-for-medium">Position</h4>
+                        <div class="programContainer show-for-large">
+                            <div class="program">
+                                <h6>Program</h6>
+                            </div>
+                            <div class="program">
+                                <h6>Program</h6>
+                            </div>
+                        </div>
                         <p class="summary show-for-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel leo tortor. Curabitur lacinia leo sed sem ornare luctus. Vestibulum sagittis quam nec est rhoncus, et fermentum nibh tempor. Cras venenatis diam orci, et ullamcorper libero euismod at. Fusce id tristique diam. Nulla nec urna arcu. Aliquam molestie fringilla urna, eget elementum felis sodales eu. Fusce vehicula, lacus quis tincidunt eleifend, urna neque ullamcorper metus, quis porta nisi tellus a metus. Morbi nulla mi, volutpat ac vehicul</p>
                     </div>
                     <ul>
@@ -84,15 +108,25 @@
                     </ul>
                 </div>
             </div>
-            <div class="lightbox">
-                <div class="gDetails small-6 medium-12 large-10 large-offset-1">
+            <div class="lightbox" class="grid-x grid-padding-x">
+                <div class="gDetails">
+                    <button class="close-button close-lightbox" aria-label="Close" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <h3 class="title">Title</h3>
                     <h4 class="position">Position</h4>
                     <h5 class="date">Date</h5>
                     <h5 class="location">Location</h5>
-                    <div class="programContainer"></div>
+                    <div class="programContainer">
+                        <div class="program">
+                            <h6>Program</h6>
+                        </div>
+                        <div class="program">
+                            <h6>Program</h6>
+                        </div>
+                    </div>
                     <img src="" class="imgM hide-for-small-only show-for-medium">
-                    <p class="details">Details</p>
+                    <p class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel leo tortor. Curabitur lacinia leo sed sem ornare luctus. Vestibulum sagittis quam nec est rhoncus, et fermentum nibh tempor. Cras venenatis diam orci, et ullamcorper libero euismod at. Fusce id tristique diam. Nulla nec urna arcu. Aliquam molestie fringilla urna, eget elementum felis sodales eu. Fusce vehicula, lacus quis tincidunt eleifend, urna neque ullamcorper metus, quis porta nisi tellus a metus. Morbi nulla mi, volutpat ac vehicul</p>
                     <img src="" class="imgS show-for-small-only">
                     <h5 class="outsideLink">View on Other Site</h5>
                 </div>
@@ -104,10 +138,10 @@
                 <h2 class="hide">Footer</h2>
                 <div class="grid-x grid-padding-x">
                     <div id="mediaIcons" class="small-12 medium-4 cell">
-                        <a href="#" id="twitter" class="icons whiteGlow"><img src="images/icons/twitter-white.svg" alt="twitter"></a>
-                        <a href="#" id="youtube" class="icons whiteGlow"><img src="images/icons/youtube-white.svg" alt="youtube"></a>
-                        <a href="#" id="deviantart" class="icons whiteGlow"><img src="images/icons/deviantart-white.svg" alt="deviantart"></a>
-                        <a href="#" id="github" class="icons whiteGlow"><img src="images/icons/github-white.svg" alt="github"></a>
+                        <a href="https://twitter.com/supersonicslash" id="twitter" class="icons whiteGlow"><img src="images/icons/twitter-white.svg" alt="twitter"></a>
+                        <a href="https://www.youtube.com/user/vigeasmos" id="youtube" class="icons whiteGlow"><img src="images/icons/youtube-white.svg" alt="youtube"></a>
+                        <a href="https://supersonicslash.deviantart.com/" id="deviantart" class="icons whiteGlow"><img src="images/icons/deviantart-white.svg" alt="deviantart"></a>
+                        <a href="https://github.com/katherinebillings" id="github" class="icons whiteGlow"><img src="images/icons/github-white.svg" alt="github"></a>
                     </div>
                     <p id="copyright" class="small-12 medium-4 medium-offset-4 cell">&#169; 2018 Katherine Billings</p>
                 </div>
