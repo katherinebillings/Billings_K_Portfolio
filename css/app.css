@@ -22,11 +22,6 @@
     font-style: normal;
 }
 
-html
-{
-    height: 100%;
-}
-
 body
 {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#23014d+0,110026+100 */
@@ -455,6 +450,90 @@ footer
     font-size: 1.75em;
 }
 
+.bioText
+{
+    text-indent: 50px;
+}
+
+.bioText, .bioList li
+{
+    font-family: 'allerregular', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.bioList h3
+{
+    font-size: 1.375em;
+    font-family: 'allerbold', Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.bioList ul
+{
+    margin-top: 10px;
+    list-style: none;
+}
+
+.bioList li
+{
+    margin-top: 5px;
+}
+
+.bioList ul li:before
+{
+    content: '\003e';
+    margin-right: 1em;
+}
+
+/*Contact*/
+#registerForm
+{
+    margin-top: 15px;
+}
+
+#registerForm input:not(#send), #registerForm textarea
+{
+    font-size: 1.375em;
+    font-family: 'allerregular', Arial, Helvetica, sans-serif;
+    padding: 12px;
+}
+
+#registerForm textarea
+{
+    overflow: hidden;
+}
+
+#registerForm input:placeholder
+{
+    color: #bbbbbb;
+}
+
+#send
+{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6e02f5+0,0000ff+100 */
+    background: rgb(110,2,245); /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(110,2,245,1) 0%, rgba(0,0,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(110,2,245,1) 0%,rgba(0,0,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(110,2,245,1) 0%,rgba(0,0,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6e02f5', endColorstr='#0000ff',GradientType=1 ); /* IE6-9 */
+    border: none;
+    padding: 10px 30px;
+    font-family: 'alusineregular', "Arial Black", Gadget, sans-serif;
+    color: #00ffff;
+    -webkit-text-stroke: 1.25px white;
+    text-align: center;
+    font-size: 3em;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+#send:hover
+{
+    color: white;
+}
+
 /*Medium*/
 @media screen and (min-width:40em) {
 
@@ -475,11 +554,6 @@ footer
         margin-top: 30px;
         padding-right: 0;
         font-size: 1.75em;
-    }
-
-    #mainNav ul li
-    {
-        display: inline;
     }
 
     #mainNav ul li a
@@ -567,7 +641,12 @@ footer
 
     .gFile
     {
-        background-color: blue;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0000ff+0,0000a8+100 */
+        background: rgb(0,0,255); /* Old browsers */
+        background: -moz-linear-gradient(left, rgba(0,0,255,1) 0%, rgba(0,0,168,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(0,0,255,1) 0%,rgba(0,0,168,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(0,0,255,1) 0%,rgba(0,0,168,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000ff', endColorstr='#0000a8',GradientType=1 ); /* IE6-9 */
         padding: 20px;
         margin-top: 20px;
     }
@@ -585,6 +664,12 @@ footer
     #topTitles h2
     {
         font-size: 3.75em;
+    }
+
+    /*Contact*/
+    #send
+    {
+        width: 40%;
     }
 }
 
@@ -641,5 +726,16 @@ footer
     {
         max-width: 196px;
         max-height: 196px;
+    }
+
+    /*About*/
+    .bioList h3
+    {
+        font-size: 1.75em;
+    }
+
+    .bioList li
+    {
+        font-size: 1.375em;
     }
 }
