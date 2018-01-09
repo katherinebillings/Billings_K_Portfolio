@@ -266,6 +266,12 @@ footer
     font-size: 3em;
 }
 
+#topContent h3
+{
+    font-size: 3em;
+    cursor: pointer;
+}
+
 #topContent h3:hover
 {
     color: transparent;
@@ -287,6 +293,7 @@ footer
     background-repeat: no-repeat;
     margin-right: 10px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 #filterMenu, #filterMenu li
@@ -340,6 +347,11 @@ footer
     text-align: left;
 }
 
+.is-accordion-submenu-item
+{
+    margin: 0;
+}
+
 #filterText h3
 {
     cursor: pointer;
@@ -347,7 +359,7 @@ footer
 
 .activeFilter
 {
-    font-family: 'allerbold', Arial, Helvetica, sans-serif;
+    font-family: 'allerbold', Arial, Helvetica, sans-serif !important;
 }
 
 .is-dropdown-submenu
@@ -803,6 +815,7 @@ footer
     #topContent h2
     {
         font-size: 3.75em;
+        margin-bottom: 0;
     }
 
     #topContent
@@ -810,7 +823,7 @@ footer
         border-bottom: 2px solid #6e02f5;
     }
 
-    .menu.align-center li
+    .menu.align-center > li
     {
         margin: 0 40px;
     }
@@ -906,6 +919,11 @@ footer
         font-size: 3.75em;
     }
 
+    #topTitles h3
+    {
+        font-size: 3em;
+    }
+
     /*Contact*/
     #send
     {
@@ -972,6 +990,7 @@ footer
     {
         width: 75%;
         max-width: 800px;
+        margin-bottom: 20px;
     }
 
     .gDetails h3

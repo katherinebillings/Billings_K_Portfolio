@@ -55,10 +55,4 @@ $(document).foundation();
         lbImg[i].addEventListener("click", popLightbox, false);
     }
 
-    //filter menu
-    var menu = document.querySelector("#filterMenu");
-    var lists = menu.querySelectorAll("ul li ul");
-    var options = menu.querySelectorAll("#filterMenu ul li ul li a");
-
-    console.log(options[1]);
 })();
