@@ -4,8 +4,8 @@
     var desButton = document.querySelector('#design');
     var devButton = document.querySelector('#development');
 
-    function indexFilter(evt) {
-        window.location="file:///D:/Documents/school/2nd%20year/1st%20semester/Portfolio_original/gallery.html";
+    function indexFilter() {
+        window.location="http://localhost/portfolio_original/gallery.html";
     }
 
     desButton.addEventListener('click', indexFilter, false);
