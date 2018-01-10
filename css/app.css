@@ -448,20 +448,6 @@ footer
     width: 50%;
 }
 
-.gInfo .programContainer
-{
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-.gInfo .program
-{
-    margin-top: 0;
-    float: left;
-    margin-right: 5px;
-    width: 25%;
-}
-
 .lightbox
 {
 	position: absolute;
@@ -536,9 +522,8 @@ footer
 .program
 {
     background-color: #6e02f5;
-    padding: 5px;
+    padding: 5px 8px;
     margin-top: 5px;
-    width: 30%;
     text-align: center;
     border-radius: 8px;
 }
@@ -563,10 +548,11 @@ footer
 .imgM
 {
     clear: both;
-    height: 265px;
-    background-color: #90a344;
     display: block;
+    margin: 0 auto;
     margin-top: 15px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .details
@@ -580,19 +566,22 @@ footer
 
 .imgS
 {
-    height: 118px;
-    background-color: #90a344;
+    margin: 0 auto;
     display: block;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .outsideLink
 {
     text-align: center;
-    color: blue ;
+    color: blue;
+    margin: 0 auto;
     margin-top: 15px;
     text-decoration: underline;
     font-family: 'allerbold', Arial, Helvetica, sans-serif;
     cursor: pointer;
+    font-size: 1em;
 }
 
 .gDetails .outsideLink:hover
