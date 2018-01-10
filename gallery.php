@@ -147,10 +147,6 @@
                 </div>
             </div>
         </footer>
-
-        <div class="small-12 hide">
-            <h1 class="request-state"></h1>
-        </div>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
