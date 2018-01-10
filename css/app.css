@@ -400,7 +400,7 @@ footer
     color: white;
 }
 
-.gFile h3, .gFile li
+.gFile h3, .gFile li, .gFile li a
 {
     color: #00ffff;
 }
@@ -436,7 +436,7 @@ footer
     cursor: pointer;
 }
 
-.gFile li:hover
+.gFile li:hover, .gFile li a:hover
 {
     color: #6e02f5;
 }
@@ -588,7 +588,7 @@ footer
 .outsideLink
 {
     text-align: center;
-    color: blue;
+    color: blue ;
     margin-top: 15px;
     text-decoration: underline;
     font-family: 'allerbold', Arial, Helvetica, sans-serif;
@@ -853,7 +853,6 @@ footer
         height: 20vw;
         background-color: #90a344;
         float: left;
-        margin-top: 15px;
         margin-left: 15px;
         margin-right: 0px;
     }

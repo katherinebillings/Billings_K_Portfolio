@@ -51,12 +51,8 @@
         element.addEventListener('click', changeOptions, false);
     });*/
 
-        "use strict";
-      // start with retrieving the elements from the page, and then adding event handling. then write the logic. refer to the seasons example / homework
-      //var Img = document.querySelectorAll('.data-ref');
-    
+  
       const httpRequest = new XMLHttpRequest();
-    
         //1. make an AJAX call to the databse; handle any errors first
         if (!httpRequest) {
           alert('giving up, your browser sucks!');
@@ -67,7 +63,7 @@
         httpRequest.open('GET', 'admin/scripts/getFiles.php');
         httpRequest.send();
     
-      function processRequest() {
+    function processRequest() {
         // handle the stages of our AJAX call
         let reqIndicator = document.querySelector('.request-state');
         reqIndicator.textContent = httpRequest.readyState;
@@ -83,7 +79,7 @@
             alert('There was a problem with the request');
           }
         }
-      }
+    }
     
          /* function processResult(data) {
             //debugger;
@@ -110,51 +106,125 @@
         
             //console.log(this.id);
           }*/
-          
-          let file = document.querySelector('.gfile');
-          console.log(file);
+            
+            //outsideL.style.color = "#00ffff";
+
+        
+          var lb, lbImg;
+
       function processResult(data) {
         //debugger;
-        const {port_title, port_position, port_summary, port_image, port_outside, outside_name} = data;
+        
         // statement chaining lets you go lots of stuff on one line
         let gallery = document.querySelector('#gallery');
+        var file = document.querySelector(".gFile");
+            data.forEach(function(element, index){
+                const [{port_title, port_position, port_summary, port_image, port_outside, outside_name}] = data;
+                let cln = file.cloneNode(true);
+                let title = cln.querySelector('.title').innerHTML = data[index].port_title;
+                let position = cln.querySelector('.position').innerHTML = data[index].port_position;
+                let summary = cln.querySelector('.summary').innerHTML = data[index].port_summary;
+                let image = cln.querySelector('.lbImg').src = "images/gallery/" + data[index].port_image + "-large.jpg";
+                let outside = cln.querySelector('.outsideLink a').innerHTML = "View on " + data[index].outside_name;
+                let outsideL = cln.querySelector('.outsideLink a').href = data[index].port_outside;
+                lb = cln.querySelector(".lbLink");
+                lbImg = cln.querySelector(".lbImg");
+
+                lb.id = index + 1;
+                lbImg.id = index + 1;
+
+                lb.addEventListener("click", popLightbox, false);
+                lbImg.addEventListener("click", popLightbox, false);
         
+                // add an index number to the thumbnail for array reference
+                //lb.dataset.index = index;
+                //lbImg.dataset.index = index;
+                /*lb.id = index;
+                lbImg.id = index;
+                console.log(lb.id);*/
+
+                //console.log(lb.dataset.index);
         
-        let title = port_title;
-        //debugger;
-    
-        //opacity change
-    
-            data.video_name.forEach(function(element, index){
-              let vid = document.createElement('video');
-    
-              // add a css class
-              vid.classList.add('media', 'responsive', 'small-12', 'medium-4', 'cell');
-              // add an image source
-              //vid.src = "video/" + objectIndex.images[index] + ".webm";
-              
-              var source= document.createElement('source');
-                source.type= 'video/webm';
-                source.src= "video/" + data.videoName[index] + ".webm";
-                vid.appendChild(source);
-                source= document.createElement('source');
-                source.type= 'video/mp4';
-                source.src= "video/" + data.videoName[index] + ".mp4";
-                vid.appendChild(source);
-    
-              // add an index number to the thumbnail for array reference
-              vid.dataset.index = index;
-    
-              // add some event handling
-              vid.addEventListener('click', popLightbox(index), false);
-    
-              // append it to the container
-              contentArea.appendChild(vid);
+                // append it to the container
+                gallery.appendChild(cln);
             });
-    
-        // the backticks are a new ES6 thing called a template string (look it up)
-        //document.querySelector(`#${data.video_name}`).classList.add(".media")
+
+        file.classList.add('hide');
     
         //console.log(this.id);
         }
+
+        //console.log(lb.dataset.index);
+
+    function popLightbox() {
+        //debugger;
+        window.scrollTo(0, 0);
+        document.body.style.overflow = "hidden";
+
+        let lightbox = document.querySelector('.lightbox');
+        lightbox.style.display = 'block';
+
+        let lightboxClose = lightbox.querySelector('.close-lightbox');
+        lightboxClose.addEventListener('click', closeLightbox, false);
+
+        const httpRequest = new XMLHttpRequest();
+        //1. make an AJAX call to the databse; handle any errors first
+        if (!httpRequest) {
+          alert('giving up, your browser sucks!');
+          return false;
+        }
+    
+        httpRequest.onreadystatechange = processRequestL(this.id);
+        httpRequest.open('GET', 'admin/scripts/getFiles.php?id=' + this.id);
+        httpRequest.send();
+    
+        function processRequestL(id) {
+            // handle the stages of our AJAX call
+            let reqIndicator = document.querySelector('.request-state');
+            reqIndicator.textContent = httpRequest.readyState;
+        
+            //debugger;
+        
+            if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {// request worked, all is good
+                //debugger;
+                let data = JSON.parse(httpRequest.responseText);
+                console.log(data);
+                processResultLight(data);
+            } else {
+                alert('There was a problem with the request');
+            }
+            debugger;
+            }
+        }
+    }
+
+    function closeLightbox() {
+        //debugger;
+        document.body.style.overflow = "scroll";
+        let lightbox = document.querySelector('.lightbox');
+        lightbox.style.display = "none";
+        let lightboxImg = lightbox.querySelector('img');
+        lightboxImg.src = "";
+    }
+
+    function processResultLight(data) {
+        //debugger;
+        //let id = this.dataset.index;
+        console.log("data");
+        // statement chaining lets you go lots of stuff on one line
+        let detailsBox = document.querySelector(".gDetails");
+        const [{port_title, port_position, port_details, port_date, port_image, port_outside, outside_name, program_name}] = data;
+        let title = detailsBox.querySelector('.title').innerHTML = port_title;
+        let position = detailsBox.querySelector('.position').innerHTML = port_position;
+        let details = detailsBox.querySelector('.details').innerHTML = port_details;
+        let image = detailsBox.querySelector('.imgS').src = "images/gallery/" + port_image + ".jpg";
+        let imageM = detailsBox.querySelector('.imgM').src = "images/gallery/" + port_image + ".jpg";
+        let outside = detailsBox.querySelector('.outsideLink a').innerHTML = "View on " + outside_name;
+        let outsideL = detailsBox.querySelector('.outsideLink a').href = port_outside;
+        let program = detailsBox.querySelector('.program h6').innerHTML = program_name;
+
+    
+        //console.log(this.id);
+    }
 })();
