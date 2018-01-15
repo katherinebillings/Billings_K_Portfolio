@@ -26,7 +26,7 @@
 		$getFiles = mysqli_query($link, $querySingle);
 	}else{
 		//4. Returns all movies
-		$fileQuery = "SELECT p.port_title, p.port_position, p.port_summary, p.port_image, p.port_outside, o.outside_name FROM tbl_portfolio p, tbl_outside o, tbl_port_out po WHERE p.port_id = po.port_id AND o.outside_id = po.outside_id";
+		$fileQuery = "SELECT p.port_title, p.port_position, p.port_summary, p.port_image, p.port_outside, o.outside_name FROM tbl_portfolio p, tbl_outside o, tbl_port_out po WHERE p.port_id = po.port_id AND o.outside_id = po.outside_id GROUP BY p.port_id";
 
 		$getFiles = mysqli_query($link, $fileQuery);
 		//echo $getMovies;

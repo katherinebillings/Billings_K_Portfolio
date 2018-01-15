@@ -5,7 +5,7 @@
     var devButton = document.querySelector('#development');
 
     function indexFilter() {
-        window.location="http://localhost/portfolio_original/gallery.html";
+        window.location="gallery.html";
     }
 
     desButton.addEventListener('click', indexFilter, false);
